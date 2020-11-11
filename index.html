@@ -14,69 +14,207 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-        <head>
-          <!--Load the AJAX API-->
-          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-          <script type="text/javascript">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
 
-            // Load the Visualization API and the corechart package.
-            google.charts.load('current', {'packages':['corechart']});
+        var options = {
+          title: '행정구역별 인구수',
+          pieHole: 0.4,
+        };
 
-            // Set a callback to run when the Google Visualization API is loaded.
-            google.charts.setOnLoadCallback(drawChart);
+        var chart = new google.visualization.PieChart(document.getElementById('pop_donutchart'));
+        chart.draw(data, options);
+      }
+      </script>
+      <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Task', 'Hours per Day'],
+            ['Work',     11],
+            ['Eat',      2],
+            ['Commute',  2],
+            ['Watch TV', 2],
+            ['Sleep',    7]
+          ]);
 
-            // Callback that creates and populates a data table,
-            // instantiates the pie chart, passes in the data and
-            // draws it.
-            function drawChart() {
+          var options = {
+            title: '행정구역별 초등학교수',
+            pieHole: 0.4,
+          };
 
-              // Create the data table.
-              var data = new google.visualization.DataTable();
-              data.addColumn('string', 'Topping');
-              data.addColumn('number', 'Slices');
-              data.addRows([
-                ['Mushrooms', 5],
-                ['Onions', 1],
-                ['Olives', 1],
-                ['Zucchini', 1],
-                ['Pepperoni', 2]
-              ]);
+          var chart = new google.visualization.PieChart(document.getElementById('school_donutchart'));
+          chart.draw(data, options);
+        }
+    </script>
+        <script type="text/javascript">
+        google.charts.load('current', {'packages':['line', 'corechart']});
+        google.charts.setOnLoadCallback(drawChart);
 
-              // Set chart options
-              var options = {'title':'How Much Pizza I Ate Last Night',
-                             'width':400,
-                             'height':300};
+      function drawChart() {
+        var chartDiv = document.getElementById('pop_chart_div');
 
-              // Instantiate and draw our chart, passing in some options.
-              var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-              chart.draw(data, options);
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', '년도');
+        data.addColumn('number', "전체 인구");
+        data.addColumn('number', "영유아 인구");
+
+        data.addRows([
+          ['2010',  4955,  58.8],
+          ['2011',  4994,  57.9],
+          ['2012',  5020,  58.1],
+          ['2013',  5043,  57.4],
+          ['2014',  5075,  55.9],
+          ['2015',  5101,  54.6],
+          ['2016',  5121,  53],
+          ['2017',  5136,  50.4],
+          ['2018',  5161,  47.1],
+          ['2019',  5178,  43.8]
+        ]);
+
+        var materialOptions = {
+          chart: {
+            title: ' '
+          },
+          width: 900,
+          height: 500,
+          series: {
+            // Gives each series an axis name that matches the Y-axis below.
+            0: {axis: 'Total'},
+            1: {axis: 'Children'}
+          },
+          axes: {
+            // Adds labels to each axis; they don't have to match the axis names.
+            y: {
+              Total: {label: '전체인구(만명)'},
+              Children: {label: '영유아인구(만명)'}
             }
-          </script>
-          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-          <script type="text/javascript">
-            google.charts.load('current', {'packages':['corechart']});
-            google.charts.setOnLoadCallback(drawChart);
+          }
+        };
+        function drawMaterialChart() {
+          var materialChart = new google.charts.Line(chartDiv);
+          materialChart.draw(data, materialOptions);
+          button.innerText = 'Change to Classic';
+          button.onclick = drawClassicChart;
+        }
 
-            function drawChart() {
-              var data = google.visualization.arrayToDataTable([
-                ['Year', 'Sales', 'Expenses'],
-                ['2004',  2000,      400],
-                ['2005',  1170,      460],
-                ['2006',  660,       1120],
-                ['2007',  1030,      540]
-              ]);
+        drawMaterialChart();
 
-              var options = {
-                title: 'Company Performance',
-                curveType: 'function',
-                legend: { position: 'bottom' }
-              };
+      }
+    </script>
+      <script type="text/javascript">
+      google.charts.load('current', {'packages':['line', 'corechart']});
+      google.charts.setOnLoadCallback(drawChart);
 
-              var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+      function drawChart() {
+        var chartDiv = document.getElementById('pop_school_chart_div');
 
-              chart.draw(data, options);
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', '년도');
+        data.addColumn('number', "초등학교 수");
+        data.addColumn('number', "영유아 인구");
+
+        data.addRows([
+          ['2010',  587,  58.8],
+          ['2011',  591,  57.9],
+          ['2012',  594,  58.1],
+          ['2013',  597,  57.4],
+          ['2014',  599,  55.9],
+          ['2015',  599,  54.6],
+          ['2016',  601,  53],
+          ['2017',  603,  50.4],
+          ['2018',  603,  47.1],
+          ['2019',  607,  43.8]
+        ]);
+
+        var materialOptions = {
+          chart: {
+            title: ' '
+          },
+          width: 900,
+          height: 500,
+          series: {
+            // Gives each series an axis name that matches the Y-axis below.
+            0: {axis: 'Total'},
+            1: {axis: 'Children'}
+          },
+          axes: {
+            // Adds labels to each axis; they don't have to match the axis names.
+            y: {
+              Total: {label: '초등학교수'},
+              Children: {label: '영유아인구(만명)'}
             }
-          </script>
+          }
+        };
+        function drawMaterialChart() {
+          var materialChart = new google.charts.Line(chartDiv);
+          materialChart.draw(data, materialOptions);
+          button.innerText = 'Change to Classic';
+          button.onclick = drawClassicChart;
+        }
+
+        drawMaterialChart();
+
+      }
+    </script>
+        <script type="text/javascript">
+          google.charts.load('current', {'packages':['corechart']});
+          google.charts.setOnLoadCallback(drawChart);
+          function drawChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Topping');
+            data.addColumn('number', 'Slices');
+            data.addRows([
+              ['Mushrooms', 5],
+              ['Onions', 1],
+              ['Olives', 1],
+              ['Zucchini', 1],
+              ['Pepperoni', 2]
+            ]);
+            var options = {'title':'How Much Pizza I Ate Last Night',
+                           'width':400,
+                           'height':300};
+            var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+          }
+        </script>
+        <script type="text/javascript">
+          google.charts.load('current', {'packages':['corechart']});
+          google.charts.setOnLoadCallback(drawChart);
+
+          function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['Year', 'Sales', 'Expenses'],
+              ['2004',  2000,      400],
+              ['2005',  1170,      460],
+              ['2006',  660,       1120],
+              ['2007',  1030,      540]
+            ]);
+
+            var options = {
+              title: 'Company Performance',
+              curveType: 'function',
+              legend: { position: 'bottom' }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+            chart.draw(data, options);
+          }
+        </script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -146,7 +284,8 @@
                             첫번째. 대한민국 인구수와 영유아 인구수를 비교하였습니다.<br><br>
                             두번째. 영유아 인구수와 초등학교 수를 비교하였습니다.<br><br>
                             세번째. 인구수가 많은 행정구와 초등학교 수가 많은 행정구를 비교했습니다.<br><br>
-                            네번째. 교원 1인당 학생수를 비교했습니다.
+                            네번째. 교원 1인당 학생수를 비교했습니다.<br><br><br><br><br><br>
+                            Data Processing은 Python, Data Visualization은 Google Chart를 사용했습니다.
                         </p>
                     </div>
                 </div>
@@ -156,115 +295,87 @@
         <section class="projects-section bg-light" id="projects">
             <div class="container">
                 <!-- Featured Project Row-->
-
+                <div class="row align-items-center no-gutters mb-4 mb-lg-5"> <!--div 한 묶음이다잉! -->
+                    <!-- <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="" /></div> -->
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4>대한민국 인구수</h4>
+                            <p class="text-black-50 mb-0">대한민국 전체 인구수는 증가하는 추세지만,<br>
+                               영유아인구수는 급격히 감소함을 알 수 있습니다.</p>
+                        </div>
+                        <br>
+                        <div id="pop_chart_div" style="width: 800px; height: 500px;"></div>
+                    </div>
+                </div>
                 <div class="row align-items-center no-gutters mb-4 mb-lg-5">
                     <!-- <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="" /></div> -->
                     <div class="col-xl-4 col-lg-5">
                         <div class="featured-text text-center text-lg-left">
-                            <h4>Shoreline</h4>
-                            <p class="text-black-50 mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
+                            <h4>영유아수와 초등학교수</h4>
+                            <p class="text-black-50 mb-0">영유아 인구 수가 줄어들지만,<br>
+                            초등학교 수는 그와 반대로 소폭 상승하고 있는 것을 알 수 있습니다.</p>
                         </div>
-                        <div id="curve_chart" style="width: 900px; height: 500px"></div>
+                        <br>
+                        <div id="pop_school_chart_div"></div>
                     </div>
                 </div>
-                <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                <div class="row align-items-center no-gutters mb-4 mb-lg-5"> <!--div 한 묶음이다잉! -->
                     <!-- <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="" /></div> -->
                     <div class="col-xl-4 col-lg-5">
                         <div class="featured-text text-center text-lg-left">
-                            <h4>Shoreline</h4>
-                            <p class="text-black-50 mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
+                            <h4>행정구역별 인구수와 초등학교수</h4>
+                            <p class="text-black-50 mb-0">대한민국 전체 인구수는 증가하는 추세지만,<br>
+                               영유아인구수는 급격히 감소함을 알 수 있습니다.</p>
                         </div>
-                        <div id="chart_div"></div>
+                        <br>
+                        <div id="donut_parent">
+                          <div id="pop_donutchart" style="width: 500px; height: 500px;"></div>
+                          <div id="school_donutchart" style="width: 500px; height: 500px;"></div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Project One Row-->
-                <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-01.jpg" alt="" /></div>
-                    <div class="col-lg-6">
-                        <div class="bg-black text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-left">
-                                    <h4 class="text-white">Misty</h4>
-                                    <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
-                                    <hr class="d-none d-lg-block mb-0 ml-0" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project Two Row-->
-                <div class="row justify-content-center no-gutters">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-02.jpg" alt="" /></div>
-                    <div class="col-lg-6 order-lg-first">
-                        <div class="bg-black text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4 class="text-white">Mountains</h4>
-                                    <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!</p>
-                                    <hr class="d-none d-lg-block mb-0 mr-0" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
         <!-- Signup-->
         <section class="signup-section" id="signup">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-10 col-lg-8 mx-auto text-center">
-                        <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-                        <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
-                        <form class="form-inline d-flex">
-                            <input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email" placeholder="Enter email address..." />
-                            <button class="btn btn-primary mx-auto" type="submit">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
+              <!-- Project One Row-->
+              <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                  <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-01.jpg" alt="" /></div>
+                  <div class="col-lg-6">
+                      <div class="bg-black text-center h-100 project">
+                          <div class="d-flex h-100">
+                              <div class="project-text w-100 my-auto text-center text-lg-left">
+                                  <h4 class="text-white">Misty</h4>
+                                  <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
+                                  <hr class="d-none d-lg-block mb-0 ml-0" />
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- Project Two Row-->
+              <div class="row justify-content-center no-gutters">
+                  <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-02.jpg" alt="" /></div>
+                  <div class="col-lg-6 order-lg-first">
+                      <div class="bg-black text-center h-100 project">
+                          <div class="d-flex h-100">
+                              <div class="project-text w-100 my-auto text-center text-lg-right">
+                                  <h4 class="text-white">Mountains</h4>
+                                  <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!</p>
+                                  <hr class="d-none d-lg-block mb-0 mr-0" />
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
             </div>
         </section>
         <!-- Contact-->
         <section class="contact-section bg-black">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Address</h4>
-                                <hr class="my-4" />
-                                <div class="small text-black-50">4923 Market Street, Orlando FL</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-envelope text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Email</h4>
-                                <hr class="my-4" />
-                                <div class="small text-black-50"><a href="#!">hello@yourdomain.com</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Phone</h4>
-                                <hr class="my-4" />
-                                <div class="small text-black-50">+1 (555) 902-8832</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="social d-flex justify-content-center">
-                    <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                    <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                    <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
-                </div>
+              <font size=100 color='white'>THX</font>
             </div>
         </section>
         <!-- Footer-->
