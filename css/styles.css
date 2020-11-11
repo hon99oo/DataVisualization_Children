@@ -10349,11 +10349,11 @@ body {
   margin: 10px auto;
   display: flex;
 }
-#pop_donutchart{
+#pop_piechart{
   flex:1;
   box-sizing: border-box;
 }
-#school_donutchart{
+#school_piechart{
   flex:1;
   box-sizing: border-box;
 }

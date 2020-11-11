@@ -16,50 +16,66 @@
         <link href="css/styles.css" rel="stylesheet" />
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
-        ]);
+        <script type="text/javascript">
+          google.charts.load("current", {packages:["corechart"]});
+          google.charts.setOnLoadCallback(drawChart);
+          function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['Language', 'Speakers (in millions)'],
+              ['Assamese', 13], ['Bengali', 83], ['Bodo', 1.4],
+              ['Dogri', 2.3], ['Gujarati', 46], ['Hindi', 300],
+              ['Kannada', 38], ['Kashmiri', 5.5], ['Konkani', 5],
+              ['Maithili', 20], ['Malayalam', 33], ['Manipuri', 1.5],
+              ['Marathi', 72], ['Nepali', 2.9], ['Oriya', 33],
+              ['Punjabi', 29], ['Sanskrit', 0.01], ['Santhali', 6.5],
+              ['Sindhi', 2.5], ['Tamil', 61], ['Telugu', 74], ['Urdu', 52]
+            ]);
 
-        var options = {
-          title: '행정구역별 인구수',
-          pieHole: 0.4,
-        };
+            var options = {
+              title: 'Indian Language Use',
+              legend: 'none',
+              pieSliceText: 'label',
+              slices: {  1: {offset: 0.2},
+                        4: {offset: 0.3},
+                        6: {offset: 0.4},
+                        9: {offset: 0.5},
+              },
+            };
 
-        var chart = new google.visualization.PieChart(document.getElementById('pop_donutchart'));
-        chart.draw(data, options);
-      }
-      </script>
-      <script type="text/javascript">
+            var chart = new google.visualization.PieChart(document.getElementById('pop_piechart'));
+            chart.draw(data, options);
+          }
+        </script>
+        <script type="text/javascript">
         google.charts.load("current", {packages:["corechart"]});
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
           var data = google.visualization.arrayToDataTable([
-            ['Task', 'Hours per Day'],
-            ['Work',     11],
-            ['Eat',      2],
-            ['Commute',  2],
-            ['Watch TV', 2],
-            ['Sleep',    7]
+            ['Language', 'Speakers (in millions)'],
+            ['Assamese', 13], ['Bengali', 83], ['Bodo', 1.4],
+            ['Dogri', 2.3], ['Gujarati', 46], ['Hindi', 300],
+            ['Kannada', 38], ['Kashmiri', 5.5], ['Konkani', 5],
+            ['Maithili', 20], ['Malayalam', 33], ['Manipuri', 1.5],
+            ['Marathi', 72], ['Nepali', 2.9], ['Oriya', 33],
+            ['Punjabi', 29], ['Sanskrit', 0.01], ['Santhali', 6.5],
+            ['Sindhi', 2.5], ['Tamil', 61], ['Telugu', 74], ['Urdu', 52]
           ]);
 
           var options = {
-            title: '행정구역별 초등학교수',
-            pieHole: 0.4,
+            title: 'Indian Language Use',
+            legend: 'none',
+            pieSliceText: 'label',
+            slices: {  4: {offset: 0.2},
+                      12: {offset: 0.3},
+                      14: {offset: 0.4},
+                      15: {offset: 0.5},
+            },
           };
 
-          var chart = new google.visualization.PieChart(document.getElementById('school_donutchart'));
+          var chart = new google.visualization.PieChart(document.getElementById('school_piechart'));
           chart.draw(data, options);
         }
-    </script>
+      </script>
         <script type="text/javascript">
         google.charts.load('current', {'packages':['line', 'corechart']});
         google.charts.setOnLoadCallback(drawChart);
@@ -238,7 +254,7 @@
         <header class="masthead">
             <div class="container d-flex h-100 align-items-center">
                 <div class="mx-auto text-center">
-                    <h1 class="mx-auto my-0 text-uppercase">DataVisualization#3</h1>
+                    <h1 class="mx-auto my-0 text-uppercase">Data Visualization#3</h1>
                     <h2 class="text-white-50 mx-auto mt-2 mb-5">디지털콘텐츠학과 16011169 강홍구</h2>
                     <a class="btn btn-primary js-scroll-trigger" href="#about">Get Started</a>
                 </div>
@@ -329,8 +345,8 @@
                         </div>
                         <br>
                         <div id="donut_parent">
-                          <div id="pop_donutchart" style="width: 500px; height: 500px;"></div>
-                          <div id="school_donutchart" style="width: 500px; height: 500px;"></div>
+                          <div id="pop_piechart" style="width: 500px; height: 500px;"></div>
+                          <div id="school_piechart" style="width: 500px; height: 500px;"></div>
                         </div>
                     </div>
                 </div>
