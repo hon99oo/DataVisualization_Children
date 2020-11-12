@@ -21,16 +21,16 @@
           google.charts.setOnLoadCallback(drawChart);
           function drawChart() {
             var data = google.visualization.arrayToDataTable([
-              ['Language', 'Speakers (in millions)'],
-              ['Assamese', 13], ['Bengali', 83], ['Bodo', 1.4],
-              ['Dogri', 2.3], ['Gujarati', 46], ['Hindi', 300],
-              ['Kannada', 38], ['Kashmiri', 5.5], ['Konkani', 5],
-              ['Maithili', 20], ['Malayalam', 33], ['Manipuri', 1.5],
-              ['Marathi', 72], ['Nepali', 2.9], ['Oriya', 33],
-              ['Punjabi', 29], ['Sanskrit', 0.01], ['Santhali', 6.5],
-              ['Sindhi', 2.5], ['Tamil', 61], ['Telugu', 74], ['Urdu', 52]
+              ['district', 'school'],
+              ['종로구', 4550], ['중구', 12], ['용산구', 15],
+              ['성동구', 21], ['광진구', 22], ['동대문구', 21],
+              ['은평구', 31], ['송파구', 40], ['강북구', 14],
+              ['도봉구', 23], ['노원구', 42], ['중랑구', 23],
+              ['서대문구', 19], ['마포구', 22], ['양천구', 30],
+              ['강서구', 36], ['구로구', 26], ['금천구', 18],
+              ['영등포구', 23], ['강남구', 33], ['관악구', 22],
+              ['서초구', 24], ['동작구', 21] , ['성북구', 29], ['강동구', 27]
             ]);
-
             var options = {
               title: 'Indian Language Use',
               legend: 'none',
@@ -51,24 +51,26 @@
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
           var data = google.visualization.arrayToDataTable([
-            ['Language', 'Speakers (in millions)'],
-            ['Assamese', 13], ['Bengali', 83], ['Bodo', 1.4],
-            ['Dogri', 2.3], ['Gujarati', 46], ['Hindi', 300],
-            ['Kannada', 38], ['Kashmiri', 5.5], ['Konkani', 5],
-            ['Maithili', 20], ['Malayalam', 33], ['Manipuri', 1.5],
-            ['Marathi', 72], ['Nepali', 2.9], ['Oriya', 33],
-            ['Punjabi', 29], ['Sanskrit', 0.01], ['Santhali', 6.5],
-            ['Sindhi', 2.5], ['Tamil', 61], ['Telugu', 74], ['Urdu', 52]
+            ['district', 'school'],
+            ['종로구', 13], ['중구', 12], ['용산구', 15],
+            ['성동구', 21], ['광진구', 22], ['동대문구', 21],
+            ['은평구', 31], ['송파구', 40], ['강북구', 14],
+            ['도봉구', 23], ['노원구', 42], ['중랑구', 23],
+            ['서대문구', 19], ['마포구', 22], ['양천구', 30],
+            ['강서구', 36], ['구로구', 26], ['금천구', 18],
+            ['영등포구', 23], ['강남구', 33], ['관악구', 22],
+            ['서초구', 24], ['동작구', 21] , ['성북구', 29], ['강동구', 27]
           ]);
 
           var options = {
             title: 'Indian Language Use',
             legend: 'none',
             pieSliceText: 'label',
-            slices: {  4: {offset: 0.2},
-                      12: {offset: 0.3},
-                      14: {offset: 0.4},
-                      15: {offset: 0.5},
+            slices: {  10: {offset: 0.6},
+                      7: {offset: 0.4},
+                      15: {offset: 0.3},
+                      19: {offset: 0.2},
+                      6: {offset: 0.1}
             },
           };
 
@@ -89,16 +91,16 @@
         data.addColumn('number', "영유아 인구");
 
         data.addRows([
-          ['2010',  4955,  58.8],
-          ['2011',  4994,  57.9],
-          ['2012',  5020,  58.1],
-          ['2013',  5043,  57.4],
-          ['2014',  5075,  55.9],
-          ['2015',  5101,  54.6],
-          ['2016',  5121,  53],
-          ['2017',  5136,  50.4],
-          ['2018',  5161,  47.1],
-          ['2019',  5178,  43.8]
+          ['2010',  4955,  25.5],
+          ['2011',  4994,  25.1],
+          ['2012',  5020,  25.6],
+          ['2013',  5043,  24.9],
+          ['2014',  5075,  24.2],
+          ['2015',  5101,  23.2],
+          ['2016',  5121,  22.2],
+          ['2017',  5136,  20.6],
+          ['2018',  5161,  18.2],
+          ['2019',  5178,  16.5]
         ]);
 
         var materialOptions = {
@@ -144,16 +146,16 @@
         data.addColumn('number', "영유아 인구");
 
         data.addRows([
-          ['2010',  587,  58.8],
-          ['2011',  591,  57.9],
-          ['2012',  594,  58.1],
-          ['2013',  597,  57.4],
-          ['2014',  599,  55.9],
-          ['2015',  599,  54.6],
-          ['2016',  601,  53],
-          ['2017',  603,  50.4],
-          ['2018',  603,  47.1],
-          ['2019',  607,  43.8]
+          ['2010',  587,  25.5],
+          ['2011',  591,  25.1],
+          ['2012',  594,  25.6],
+          ['2013',  597,  24.9],
+          ['2014',  599,  24.2],
+          ['2015',  599,  23.2],
+          ['2016',  601,  22.2],
+          ['2017',  603,  20.6],
+          ['2018',  603,  18.2],
+          ['2019',  607,  16.5]
         ]);
 
         var materialOptions = {
@@ -311,6 +313,40 @@
         <section class="projects-section bg-light" id="projects">
             <div class="container">
                 <!-- Featured Project Row-->
+                <div class="row align-items-center no-gutters mb-4 mb-lg-5"> <!--div 한 묶음이다잉! -->
+                    <!-- <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="" /></div> -->
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4>행정구역별 영유아(0~4세) <br>데이터 전처리</h4>
+                            <p class="text-black-50 mb-0">행정구별 인구수중 외국인과 영유아(0~4세) 이외의 데이터를 드랍한 필요한 데이터만 PYTHON으로 전처리하여 사용하였습니다.</p>
+                        </div>
+                        <br>
+                        <div><img src="assets/img/processing1.png" alt="" /></div>
+                    </div>
+                </div>
+                <div class="row align-items-center no-gutters mb-4 mb-lg-5"> <!--div 한 묶음이다잉! -->
+                    <!-- <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="" /></div> -->
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4>년도별 영유아(0~5세) <br>데이터 전처리</h4>
+                            <p class="text-black-50 mb-0">행정구별 인구수중 외국인과 영유아(0~5세) 이외의 데이터를 드랍한 필요한 데이터만 PYTHON으로 전처리하여 사용하였습니다.</p>
+                        </div>
+                        <br>
+                        <div><img src="assets/img/processing1.png" alt="" /></div>
+                    </div>
+                </div>
+                <div class="row align-items-center no-gutters mb-4 mb-lg-5"> <!--div 한 묶음이다잉! -->
+                    <!-- <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="" /></div> -->
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4>행정구역별 초등학교<br>데이터 전처리</h4>
+                            <p class="text-black-50 mb-0">행정구별 초등학교 수 이외의 데이터를 드랍한 필요한 데이터만 PYTHON으로 전처리하여 사용하였습니다.</p>
+                        </div>
+                        <br>
+                        <div><img src="assets/img/processing1.png" alt="" /></div>
+                    </div>
+                </div>
+                <br><br><br><br><br><br><br><br><br><br>
                 <div class="row align-items-center no-gutters mb-4 mb-lg-5"> <!--div 한 묶음이다잉! -->
                     <!-- <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="" /></div> -->
                     <div class="col-xl-4 col-lg-5">
