@@ -15,30 +15,30 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript">
           google.charts.load("current", {packages:["corechart"]});
           google.charts.setOnLoadCallback(drawChart);
           function drawChart() {
             var data = google.visualization.arrayToDataTable([
               ['district', 'school'],
-              ['종로구', 4550], ['중구', 12], ['용산구', 15],
-              ['성동구', 21], ['광진구', 22], ['동대문구', 21],
-              ['은평구', 31], ['송파구', 40], ['강북구', 14],
-              ['도봉구', 23], ['노원구', 42], ['중랑구', 23],
-              ['서대문구', 19], ['마포구', 22], ['양천구', 30],
-              ['강서구', 36], ['구로구', 26], ['금천구', 18],
-              ['영등포구', 23], ['강남구', 33], ['관악구', 22],
-              ['서초구', 24], ['동작구', 21] , ['성북구', 29], ['강동구', 27]
+              ['종로구', 3346], ['중구', 3449], ['동대문구', 10016],
+              ['성동구', 10526], ['광진구', 9071], ['강동구', 15503],
+              ['서초구', 13871], ['은평구', 13579], ['강북구', 7109],
+              ['도봉구', 8457], ['송파구', 23170], ['중랑구', 10943],
+              ['서대문구', 9352], ['마포구', 12205], ['양천구', 12731],
+              ['강서구', 19091], ['구로구', 13520], ['금천구', 6175],
+              ['영등포구', 12739], ['강남구', 14398], ['노원구', 14495],
+              ['관악구', 10791], ['동작구', 11766] , ['성북구', 13036], ['용산구', 6581]
             ]);
             var options = {
-              title: 'Indian Language Use',
+              title: '행정구역별 영유아 수',
               legend: 'none',
               pieSliceText: 'label',
-              slices: {  1: {offset: 0.2},
-                        4: {offset: 0.3},
-                        6: {offset: 0.4},
-                        9: {offset: 0.5},
+              slices: {  10: {offset: 0.6},
+                        15: {offset: 0.4},
+                        5: {offset: 0.3},
+                        20: {offset: 0.2},
+                        19: {offset: 0.1}
               },
             };
 
@@ -52,25 +52,25 @@
         function drawChart() {
           var data = google.visualization.arrayToDataTable([
             ['district', 'school'],
-            ['종로구', 13], ['중구', 12], ['용산구', 15],
-            ['성동구', 21], ['광진구', 22], ['동대문구', 21],
-            ['은평구', 31], ['송파구', 40], ['강북구', 14],
-            ['도봉구', 23], ['노원구', 42], ['중랑구', 23],
+            ['종로구', 13], ['중구', 12], ['동대문구', 21],
+            ['성동구', 21], ['광진구', 22], ['강동구', 27],
+            ['서초구', 26], ['은평구', 31], ['강북구', 14],
+            ['도봉구', 23], ['송파구', 40], ['중랑구', 23],
             ['서대문구', 19], ['마포구', 22], ['양천구', 30],
             ['강서구', 36], ['구로구', 26], ['금천구', 18],
-            ['영등포구', 23], ['강남구', 33], ['관악구', 22],
-            ['서초구', 24], ['동작구', 21] , ['성북구', 29], ['강동구', 27]
+            ['영등포구', 23], ['강남구', 33], ['노원구', 42],
+            ['관악구', 22], ['동작구', 21] , ['성북구', 29], ['용산구', 15]
           ]);
 
           var options = {
-            title: 'Indian Language Use',
+            title: '행정구역별 초등학교 수',
             legend: 'none',
             pieSliceText: 'label',
-            slices: {  10: {offset: 0.6},
-                      7: {offset: 0.4},
+            slices: {  20: {offset: 0.6},
+                      10: {offset: 0.4},
                       15: {offset: 0.3},
                       19: {offset: 0.2},
-                      6: {offset: 0.1}
+                      7: {offset: 0.1}
             },
           };
 
@@ -215,15 +215,21 @@
 
           function drawChart() {
             var data = google.visualization.arrayToDataTable([
-              ['Year', 'Sales', 'Expenses'],
-              ['2004',  2000,      400],
-              ['2005',  1170,      460],
-              ['2006',  660,       1120],
-              ['2007',  1030,      540]
+              ['년도', '교원 1인당 학생수'],
+              ['2010',  14.6],
+              ['2011',  14.1],
+              ['2012',  14.2],
+              ['2013',  13.9],
+              ['2014',  13.7],
+              ['2015',  13.2],
+              ['2016',  12.9],
+              ['2017',  12.5],
+              ['2018',  12.2],
+              ['2019',  11.9]
             ]);
 
             var options = {
-              title: 'Company Performance',
+              title: '교원 1인당 학생 수',
               curveType: 'function',
               legend: { position: 'bottom' }
             };
@@ -288,7 +294,7 @@
                            최근 인구 수 관련 뉴스 기사 헤드라인과 2005년 발행된 책의 일부입니다.<br>
                            이렇듯 대한민국의 인구수 문제는 여러해를 거쳐 꾸준히 제기되었던 문제입니다.<br>
                            저는 이를 바탕으로<br>
-                           <font color="white">'인구수가 줄면 초등학교의 수가 줄어든다'</font><br>
+                           <font color="white">'영유아 인구수가 줄면 초등학교의 수가 줄어든다'</font><br>
                            라는 가설을 세우고 이에 관련된 문제들에 집중을 하였습니다.<br>
                         </p>
                         <p class="text-white-50">
@@ -317,33 +323,29 @@
                     <!-- <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="" /></div> -->
                     <div class="col-xl-4 col-lg-5">
                         <div class="featured-text text-center text-lg-left">
-                            <h4>행정구역별 영유아(0~4세) <br>데이터 전처리</h4>
-                            <p class="text-black-50 mb-0">행정구별 인구수중 외국인과 영유아(0~4세) 이외의 데이터를 드랍한 필요한 데이터만 PYTHON으로 전처리하여 사용하였습니다.</p>
+                            <h4>Data Set</h4>
+                            <p class="text-black-50 mb-0">
+                              서울시 보육통계 영유아 현황정보(2010-2019)<br>
+                              서울시 초등학교 통계(2010-2019)<br>
+                              교원 1인당 학생수(구별)통계(2010-2019)<br>
+                              출처. 서울 열린데이터 광장
+                            </p>
                         </div>
                         <br>
-                        <div><img src="assets/img/processing1.png" alt="" /></div>
                     </div>
                 </div>
                 <div class="row align-items-center no-gutters mb-4 mb-lg-5"> <!--div 한 묶음이다잉! -->
                     <!-- <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="" /></div> -->
                     <div class="col-xl-4 col-lg-5">
                         <div class="featured-text text-center text-lg-left">
-                            <h4>년도별 영유아(0~5세) <br>데이터 전처리</h4>
-                            <p class="text-black-50 mb-0">행정구별 인구수중 외국인과 영유아(0~5세) 이외의 데이터를 드랍한 필요한 데이터만 PYTHON으로 전처리하여 사용하였습니다.</p>
+                            <h4>Data Processing</h4>
+                            <p class="text-black-50 mb-0">PYTHON을 이용하여 아래와 같은 방식으로<br>
+                              년도별 영유아 인구수, 행정구역별 영유아 인구수<br>
+                              행정구역별 초등학교수에 대한 데이터를 <br>전처리 하였습니다.
+                            </p>
                         </div>
                         <br>
-                        <div><img src="assets/img/processing1.png" alt="" /></div>
-                    </div>
-                </div>
-                <div class="row align-items-center no-gutters mb-4 mb-lg-5"> <!--div 한 묶음이다잉! -->
-                    <!-- <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="" /></div> -->
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>행정구역별 초등학교<br>데이터 전처리</h4>
-                            <p class="text-black-50 mb-0">행정구별 초등학교 수 이외의 데이터를 드랍한 필요한 데이터만 PYTHON으로 전처리하여 사용하였습니다.</p>
-                        </div>
-                        <br>
-                        <div><img src="assets/img/processing1.png" alt="" /></div>
+                        <div><img src="assets/img/processing3.png" alt="" /></div>
                     </div>
                 </div>
                 <br><br><br><br><br><br><br><br><br><br>
@@ -375,9 +377,10 @@
                     <!-- <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="" /></div> -->
                     <div class="col-xl-4 col-lg-5">
                         <div class="featured-text text-center text-lg-left">
-                            <h4>행정구역별 인구수와 초등학교수</h4>
-                            <p class="text-black-50 mb-0">대한민국 전체 인구수는 증가하는 추세지만,<br>
-                               영유아인구수는 급격히 감소함을 알 수 있습니다.</p>
+                            <h4>행정구역별<br> 영유아 인구수와 초등학교수</h4>
+                            <p class="text-black-50 mb-0">인구수와 초등학교수가<br>
+                              어느정도 일치함을 알 수 있습니다.
+                            </p>
                         </div>
                         <br>
                         <div id="donut_parent">
@@ -386,21 +389,56 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="row align-items-center no-gutters mb-4 mb-lg-5"> <!--div 한 묶음이다잉! -->
+                    <!-- <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="" /></div> -->
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4>교원 1인당 학생 수</h4>
+                            <p class="text-black-50 mb-0">
+                              영유아 인구수가 줄어도 초등학교수가 늘어<br>
+                              교원 1인당 학생 수가 늘어남을 알 수 있습니다.
+                            </p>
+                        </div>
+                        <br>
+                        <div id="curve_chart" style="width: 900px; height: 500px"></div>
+                    </div>
+                </div>
             </div>
         </section>
         <!-- Signup-->
         <section class="signup-section" id="signup">
+          <div class="container" align=center>
+            <font size=100 color='black'>Conclusions</font>
+            <br><br><br><br><br>
+          </div>
             <div class="container">
               <!-- Project One Row-->
               <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-                  <div class="col-lg-6"><img class="img-fluid" src="assets/img/증명사진.jpg" alt="" /></div>
+                  <!-- <div class="col-lg-6"><img class="img-fluid" src="assets/img/증명사진.jpg" alt="" /></div> -->
                   <div class="col-lg-6">
                       <div class="bg-black text-center h-100 project">
                           <div class="d-flex h-100">
                               <div class="project-text w-100 my-auto text-center text-lg-left">
-                                  <h4 class="text-white">Conclusion1</h4>
-                                  <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
+                                  <h4 class="text-white">영유아 인구수가 줄어도 초등학교의 수가 줄지 않았다.</h4>
+                                  <p class="mb-0 text-white-50"><br>전체 인구와 영유아 인구수의 비교를 통하여 영유아 인구수가 줄어드는 것을 확인할 수 있었고, 이를 바탕으로 초등학교 수와 비교를 하였을 때 초등학교 수는 증가하는 것을 알 수 있었습니다. 서울 시내의 초등학교 분포에 더 정확한 정보를 파악하기 위하여 행정구역별 영유아 인구수와 초등학교 수를 비교하였을 때 두 관계가 일치함을 확인할 수 있었습니다.<br><br></p>
+                                  <hr class="d-none d-lg-block mb-0 ml-0" />
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <br>
+              <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                  <!-- <div class="col-lg-6"><img class="img-fluid" src="assets/img/증명사진.jpg" alt="" /></div> -->
+                  <div class="col-lg-6">
+                      <div class="bg-black text-center h-100 project">
+                          <div class="d-flex h-100">
+                              <div class="project-text w-100 my-auto text-center text-lg-left">
+                                  <h4 class="text-white">초등학교 수의 증가로 교육의 품질은 증가하였다.</h4>
+                                  <p class="mb-0 text-white-50"><br>초등학교 수가 줄어들고 교육의 품질이 낮아질 것이라는 예상과 반대로
+                                    교원 1인당 학생수를 년도별로 비교하였을 때 감소함을 확인할 수 있었습니다.
+                                    영유아 인구수가 줄어도 초등학교 수가 증가하고 교원 1인당 학생수가 감소함으로 교육의 품질이 증가하고 있음을 알 수 있었습니다.
+                                    </p>
                                   <hr class="d-none d-lg-block mb-0 ml-0" />
                               </div>
                           </div>
@@ -408,26 +446,13 @@
                   </div>
               </div>
               <!-- Project Two Row-->
-              <div class="row justify-content-center no-gutters">
-                  <div class="col-lg-6"><img class="img-fluid" src="assets/img/증명사진.jpg" alt="" /></div>
-                  <div class="col-lg-6 order-lg-first">
-                      <div class="bg-black text-center h-100 project">
-                          <div class="d-flex h-100">
-                              <div class="project-text w-100 my-auto text-center text-lg-right">
-                                  <h4 class="text-white">Conclusion2</h4>
-                                  <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!</p>
-                                  <hr class="d-none d-lg-block mb-0 mr-0" />
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+
             </div>
         </section>
         <!-- Contact-->
         <section class="contact-section bg-black">
-            <div class="container">
-              <font size=100 color='white'>THX</font>
+            <div class="container" align=center>
+              <font size=100 color='white'>감사합니다</font>
             </div>
         </section>
         <!-- Footer-->
